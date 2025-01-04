@@ -16,7 +16,7 @@ PANDOC = pandoc
 PANDOC_BOOK = --toc --number-sections --listings --template=$(TEMPLATEDIR)/eisvogel.tex
 PANDOC_WEBPAGE = --toc --number-sections --listings --template=$(TEMPLATEDIR)/elegant_bootstrap_menu.html
 
-INSTALLDIR = ../gwu-cs-sysprog.github.io/
+INSTALLDIR = ../sysprog
 
 OUTPUT_PREFIX=lectures
 
@@ -60,7 +60,7 @@ install: html
 	cp figures/* $(INSTALLDIR)/figures/
 	cp -r slides/*_slides.html slides/reveal slides/figures $(INSTALLDIR)/slides/
 
-doc: html pdf
+doc: html
 
 clean: $(INLINE_EXEC)_clean
 	rm -f $(AGG) $(OUTPUT_PREFIX).pdf $(OUTPUT_PREFIX).html $(CBIN)
